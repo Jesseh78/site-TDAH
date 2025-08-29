@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
   --bg: #e6f0ff;        /* fundo azul claro */
   --card: #ffffff;      /* branco para cards */
@@ -78,12 +82,337 @@ footer {
   height: auto;
   text-align: center;
   margin: 20px 0;
+  max-width: 1200px; /* Limita a largura máxima */
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .banner img {
   width: 100%;
-  max-height: auto;
+  height: auto;
+  max-width: 100%;
   object-fit: cover;
   border-radius: 10px;
   box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+  /* Melhorar qualidade da imagem */
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  /* Suporte para telas de alta resolução */
+  image-rendering: pixelated;
+}
+
+/* Versão responsiva para diferentes tamanhos de tela */
+@media (min-width: 768px) {
+  .banner img {
+    max-height: 500px; /* Altura máxima para desktop */
+  }
+}
+
+@media (max-width: 767px) {
+  .banner img {
+    max-height: 300px; /* Altura máxima para mobile */
+  }
+}
+
+/* Timer de Foco */
+.timer-container {
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.clock-display {
+  margin-bottom: 2rem;
+}
+
+.clock-display span {
+  font-size: 4rem;
+  font-weight: bold;
+  color: var(--accent);
+  font-family: 'Courier New', monospace;
+}
+
+.timer-controls {
+  margin-bottom: 1.5rem;
+}
+
+.timer-controls button {
+  margin: 0 0.5rem;
+}
+
+.timer-status p {
+  font-size: 1.2rem;
+  color: var(--muted);
+  margin: 0;
+}
+
+/* Checklist */
+.checklist-container {
+  padding: 1rem 0;
+}
+
+.add-task {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.add-task input {
+  flex: 1;
+  padding: 0.7rem;
+  border: 2px solid #e0e0e0;
+  border-radius: var(--radius);
+  font-size: 1rem;
+}
+
+.add-task input:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.task-stats {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: var(--radius);
+}
+
+.task-stats span {
+  font-weight: bold;
+  color: var(--accent);
+}
+
+.btn-small {
+  padding: 0.4rem 0.8rem;
+  font-size: 0.9rem;
+  margin-left: 0.5rem;
+}
+
+.danger {
+  background: #dc3545;
+}
+
+.danger:hover {
+  background: #c82333;
+}
+
+.task-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.task-list li {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  margin-bottom: 0.5rem;
+  background: #f8f9fa;
+  border-radius: var(--radius);
+  border-left: 4px solid var(--accent);
+}
+
+.task-list li input[type="checkbox"] {
+  margin-right: 1rem;
+  transform: scale(1.2);
+}
+
+.task-list li label {
+  flex: 1;
+  cursor: pointer;
+}
+
+.task-list li.completed label {
+  text-decoration: line-through;
+  color: #6c757d;
+}
+
+.task-list li button {
+  padding: 0.4rem 0.8rem;
+  font-size: 0.9rem;
+  background: #6c757d;
+}
+
+.task-list li button:hover {
+  background: #5a6268;
+}
+
+/* Botões específicos */
+.btn-primary {
+  background: var(--accent);
+}
+
+.btn-secondary {
+  background: var(--muted);
+}
+
+.btn-secondary:hover {
+  background: #4a5f7a;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  /* Navegação */
+  nav ul li {
+    display: block;
+    margin: 0.5rem 0;
+  }
+  
+  /* Header */
+  header h1 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  /* Main content */
+  main {
+    padding: 1rem;
+  }
+  
+  /* Cards */
+  .card {
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  /* Timer */
+  .add-task {
+    flex-direction: column;
+  }
+  
+  .task-stats {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+  
+  .timer-controls button {
+    display: block;
+    width: 100%;
+    margin: 0.5rem 0;
+  }
+  
+  .clock-display span {
+    font-size: 3rem;
+  }
+  
+  /* Checklist */
+  .add-task input {
+    margin-bottom: 0.5rem;
+  }
+  
+  .task-stats button {
+    margin: 0.25rem;
+  }
+  
+  /* Botões */
+  button {
+    padding: 0.8rem 1rem;
+    font-size: 1rem;
+  }
+}
+
+/* Seções de Recursos */
+.resource-section {
+  margin-bottom: 3rem;
+  padding: 2rem;
+  background: #f8f9fa;
+  border-radius: var(--radius);
+  border-left: 4px solid var(--accent);
+}
+
+.resource-section:last-child {
+  margin-bottom: 0;
+}
+
+.resource-section h3 {
+  color: var(--accent);
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.resource-section p {
+  margin-bottom: 1.5rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* Tablets */
+@media (min-width: 769px) and (max-width: 1024px) {
+  main {
+    padding: 1.5rem;
+  }
+  
+  .card {
+    padding: 1.25rem;
+  }
+  
+  .clock-display span {
+    font-size: 3.5rem;
+  }
+  
+  .resource-section {
+    padding: 1.5rem;
+  }
+}
+
+/* Telas pequenas (smartphones pequenos) */
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.2rem;
+  }
+  
+  main {
+    padding: 0.5rem;
+  }
+  
+  .card {
+    padding: 0.75rem;
+    border-radius: 12px;
+  }
+  
+  .clock-display span {
+    font-size: 2.5rem;
+  }
+  
+  .banner img {
+    max-height: 200px;
+  }
+  
+  .timer-controls button {
+    font-size: 0.9rem;
+    padding: 0.6rem 0.8rem;
+  }
+  
+  .resource-section {
+    padding: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .resource-section h3 {
+    font-size: 1.3rem;
+  }
+}
+
+/* Telas muito grandes */
+@media (min-width: 1200px) {
+  .banner {
+    max-width: 1400px;
+  }
+  
+  main {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .card {
+    padding: 2rem;
+  }
+  
+  .resource-section {
+    padding: 2.5rem;
+  }
 }

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TDAH - Informações</title>
+  <title>TDAH - Informações e Ferramentas</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -19,7 +19,7 @@
     </nav>
   </header>
 
-    <!-- Banner -->
+  <!-- Banner -->
   <section class="banner">
     <img src="img/banner.jpg" alt="TDAH e Tecnologias Inclusivas">
   </section>
@@ -28,7 +28,7 @@
     <section id="sobre" class="card">
       <h2>O que é TDAH?</h2>
       <p>(Texto pra rascunho) O TDAH é um transtorno do neurodesenvolvimento que afeta a atenção, impulsividade e hiperatividade. 
-        Ele pode impactar crianças, adolescentes e  adultos, influenciando na vida escolar, profissional e social.</p>
+        Ele pode impactar crianças, adolescentes e adultos, influenciando na vida escolar, profissional e social.</p>
     </section>
 
     <section id="sintomas" class="card">
@@ -53,8 +53,51 @@
 
     <section id="recursos" class="card">
       <h2>Recursos úteis</h2>
-      <button id="mostrarFrase">Não tem nada de util ainda</button>
-      <p id="frase"></p>
+      
+      <div class="resource-section">
+        <h3>⏱️ Timer de Foco (Pomodoro)</h3>
+        <p>Use esta técnica para melhorar sua concentração: 25 minutos de foco, seguidos de uma pausa.</p>
+        
+        <div class="timer-container">
+          <div class="clock-display">
+            <span id="clock">25:00</span>
+          </div>
+          <div class="timer-controls">
+            <button id="startBtn" class="btn-primary">Iniciar</button>
+            <button id="pauseBtn" class="btn-secondary">Pausar</button>
+            <button id="resetBtn" class="btn-secondary">Resetar</button>
+          </div>
+          <div class="timer-status">
+            <p id="status">Pronto para focar</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="resource-section">
+        <h3>📝 Checklist de Tarefas</h3>
+        <p>Organize suas tarefas diárias e mantenha o controle do que precisa ser feito.</p>
+        
+        <div class="checklist-container">
+          <div class="add-task">
+            <input type="text" id="newItem" placeholder="Digite uma nova tarefa..." />
+            <button id="addItem" class="btn-primary">Adicionar</button>
+          </div>
+          
+          <div class="task-stats">
+            <span id="count">0 pendente</span>
+            <button id="clearDone" class="btn-small">Limpar Concluídas</button>
+            <button id="clearAll" class="btn-small danger">Limpar Tudo</button>
+          </div>
+          
+          <ul id="todo" class="task-list"></ul>
+        </div>
+      </div>
+
+      <div class="resource-section">
+        <h3>Outros Recursos</h3>
+        <button id="mostrarFrase">Não tem nada de util ainda</button>
+        <p id="frase"></p>
+      </div>
     </section>
   </main>
 
